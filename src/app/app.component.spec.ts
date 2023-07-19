@@ -24,8 +24,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.title').textContent).toContain(
-      'Welcome to resume-website!',
-    );
+    expect(compiled.querySelector('.title').textContent).toContain('Welcome to resume-website!');
   });
 });
