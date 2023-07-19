@@ -2,11 +2,13 @@
   "name": "resume-website",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
+    "start:hmr": "ng serve --open --port=3333 --disable-host-check --hmr",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --runInBand",
+    "prettier:write": "prettier --config .prettierrc.json --write \"src/*.{ts,js,css,scss,json,html}\""
   },
   "private": true,
   "dependencies": {
@@ -27,12 +29,13 @@
     "@angular/cli": "~16.1.4",
     "@angular/compiler-cli": "^16.1.0",
     "@types/jasmine": "~4.3.0",
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.2",
     "jasmine-core": "~4.6.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
+    "jest": "^29.6.1",
+    "jest-preset-angular": "^13.1.1",
+    "prettier": "^3.0.0",
+    "ts-jest": "^29.1.1",
     "typescript": "~5.1.3"
   }
 }
