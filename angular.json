@@ -75,17 +75,17 @@
             "browserTarget": "resume-website:build"
           }
         },
-        "test": {
-          "builder": "@angular-builders/jest:run",
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "jestConfig": "src/jest.config.js",
-            "tsConfig": "src/tsconfig.spec.json"
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }
