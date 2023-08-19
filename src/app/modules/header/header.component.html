@@ -6,17 +6,18 @@
         <p class="text-sm">Frontend Developer</p>
       </div>
     </div>
-    <nav class="space-x-10">
-      <a mat-button routerLink="/experiences" class="text-sm font-medium hover:underline">
-        Experiences
-      </a>
-      <a mat-button routerLink="/educations" class="text-sm font-medium hover:underline">
-        Educations
-      </a>
-      <a mat-button routerLink="/projects" class="text-sm font-medium hover:underline">
-        Projects
-      </a>
-      <a mat-button routerLink="/skills" class="text-sm font-medium hover:underline"> Skills </a>
-    </nav>
+    <div class="flex items-center space-x-10">
+      <nav class="flex space-x-10">
+        <a
+          mat-button
+          *ngFor="let link of navigationLinks"
+          [routerLink]="link.route"
+          class="text-sm font-medium hover:underline"
+        >
+          {{ link.label }}
+        </a>
+      </nav>
+    </div>
+
   </div>
 </mat-toolbar>
